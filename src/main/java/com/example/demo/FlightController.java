@@ -27,7 +27,7 @@ public class FlightController {
     @RequestMapping(value = "/flights/lite", method = RequestMethod.GET)
     public List<Flight> get() {
         List<Flight> result = new ArrayList<>();
-        flightRepository.findAll().forEach(flight -> result.add(flight));
+        flightRepository.findAll().forEach(result::add);
         return result;
     }
 

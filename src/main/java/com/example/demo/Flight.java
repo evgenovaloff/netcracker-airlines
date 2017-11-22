@@ -31,6 +31,14 @@ public class Flight implements Identifiable<Long>{
 
     public Flight() {}
 
-    public Flight(String nameFlight, String typeAircraft, String departureFlight, String destinationFlight, String company) {}
+    public Flight(String nameFlight, String typeAircraft, String departureFlight, String destinationFlight, String company) {
+        this.nameFlight = nameFlight;
+        this.typeAircraft = typeAircraft;
+        this.departureFlight = departureFlight;
+        this.destinationFlight = destinationFlight;
+        this.company = company;
+    }
+
+    //    public Flight(String nameFlight, String typeAircraft, String departureFlight, String destinationFlight, String company) {}
 
 }

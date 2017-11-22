@@ -19,18 +19,18 @@ public class Passenger implements Identifiable<Long> {
     private int numberTicket;
 
     @Column(name ="firstname", nullable = false)
-    private String firstname;
+    private String firstName;
 
     @Column(name ="secondname", nullable = false)
-    private String secondname;
+    private String secondName;
 
     @Column(name ="gender", nullable = false)
     private String gender;
 
     @Column(name ="borndate", nullable = false)
-    private Date borndate;
+    private Date bornDate;
 
-    @Column(name ="Flight", nullable = false)
+    @Column(name ="flight", nullable = false)
     private String flights;
 
     public Passenger() {}
