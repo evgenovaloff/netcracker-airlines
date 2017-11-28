@@ -1,0 +1,35 @@
+{
+  "name": "symphony",
+  "description": "Cleaning-service application",
+  "main": "gulpfile.js",
+  "authors": [
+    "evgenovaloff"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "front",
+    "symphony",
+    "web"
+  ],
+  "homepage": "symphony.to",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "4.0.0-beta",
+    "vue": "2.5.4"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/js/bootstrap.min.js",
+        "dist/css/bootstrap.min.css"
+      ]
+    }
+  }
+}

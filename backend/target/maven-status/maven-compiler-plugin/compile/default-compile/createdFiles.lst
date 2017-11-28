@@ -1,0 +1,5 @@
+com\example\demo\DemoApplication.class
+com\example\demo\flightsRepository.class
+com\example\demo\flights.class
+com\example\demo\passengers.class
+com\example\demo\passengersRepository.class
