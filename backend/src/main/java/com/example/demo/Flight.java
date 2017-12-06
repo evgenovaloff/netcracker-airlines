@@ -5,6 +5,7 @@ import lombok.Data;
 import org.springframework.hateoas.Identifiable;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @Entity
@@ -14,23 +15,25 @@ public class Flight implements Identifiable<Long>{
     @GeneratedValue
     private Long id;
 
-    @Column(name ="nameFlight", nullable = false, unique = true)
-    private String nameFlight;
+    @Column(name ="plane", nullable = false)
+    private String plane;
 
-    @Column(name ="typeAircraft", nullable = false)
-    private String typeAircraft;
+    @Column(name ="routeId", nullable = false)
+    private int routeId;
 
-    @Column(name ="departureFlight", nullable = false)
-    private String departureFlight;
+    @Column(name ="departure", nullable = false)
+    private Date departure;
 
-    @Column(name ="destinationFlight", nullable = false)
-    private String destinationFlight;
-
-    @Column(name ="company", nullable = false)
-    private String company;
+    @Column(name ="travelTime", nullable = false)
+    private Long travelTime;
 
     public Flight() {}
 
-    public Flight(String nameFlight, String typeAircraft, String departureFlight, String destinationFlight, String company) {}
+    public Flight(String plane, int routeId, Date departure, Long travelTime) {
+        this.plane = plane;
+        this.routeId = routeId;
+        this.departure = departure;
+        this.travelTime = travelTime;
+    }
 
 }

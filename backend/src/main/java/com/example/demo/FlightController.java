@@ -17,7 +17,7 @@ public class FlightController {
 
     @RequestMapping(value = "/flightsUniqueCreate", method = RequestMethod.POST)
     public void create(@RequestBody Flight flight){
-        Flight duplicate = flightRepository.findByNameFlight(flight.getNameFlight());
+        Flight duplicate = flightRepository.findByPlane(flight.getPlane());
         if (duplicate != null){
             throw new RuntimeException("Found dublicate during creation");
         }
@@ -27,15 +27,15 @@ public class FlightController {
     @RequestMapping(value = "/flights/lite", method = RequestMethod.GET)
     public List<Flight> get() {
         List<Flight> result = new ArrayList<>();
-        flightRepository.findAll().forEach(flight -> result.add(flight));
+        flightRepository.findAll().forEach(result::add);
         return result;
     }
 
-    @RequestMapping(value = "/heroes/{id}/{nameFlight}", method = RequestMethod.DELETE)
-    public void delete(@PathVariable Long id, @PathVariable String nameFlight){
-        log.info("Safe deleting hero with id = '{}' and nameFlight = '{}'", id, nameFlight);
+    @RequestMapping(value = "/flights/{id}/{plane}", method = RequestMethod.DELETE)
+    public void delete(@PathVariable Long id, @PathVariable String plane){
+        log.info("Safe deleting hero with id = '{}' and plane = '{}'", id, plane);
         Flight flight = flightRepository.findOne(id);
-        if (flight.getNameFlight().equals(nameFlight)){
+        if (flight.getPlane().equals(plane)){
             flightRepository.delete(id);
         }else{
             throw new RuntimeException("Input name doesn't equal to removing flight id");
