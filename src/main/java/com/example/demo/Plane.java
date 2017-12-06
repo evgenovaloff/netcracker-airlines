@@ -8,8 +8,8 @@ import javax.persistence.*;
 
 @Data
 @Entity
-/*@Table(name = "AviaCompany")*/
-public class AviaCompany implements Identifiable<Long>{
+/*@Table(name = "Plane")*/
+public class Plane implements Identifiable<Long>{
     @Id
     @GeneratedValue
     private Long id;
@@ -17,9 +17,13 @@ public class AviaCompany implements Identifiable<Long>{
     @Column(name ="name", nullable = false)
     private String name;
 
-    public AviaCompany() {}
+    @Column(name ="volume", nullable = false)
+    private int volume;
 
-    public AviaCompany(String name) {
+    public Plane() {}
+
+    public Plane(String name, int volume) {
         this.name = name;
+        this.volume = volume;
     }
 }
