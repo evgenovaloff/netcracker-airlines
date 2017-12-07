@@ -31,7 +31,7 @@ public class FlightController {
         return result;
     }
 
-    @RequestMapping(value = "/heroes/{id}/{nameFlight}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/flights/{id}/{nameFlight}", method = RequestMethod.DELETE)
     public void delete(@PathVariable Long id, @PathVariable String nameFlight){
         log.info("Safe deleting hero with id = '{}' and nameFlight = '{}'", id, nameFlight);
         Flight flight = flightRepository.findOne(id);
